@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            margin-top: 10px;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(39, 20, 184, 0.2);
+            text-align: center;
+            width: 420px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #cd2828;
+            color: rgb(1, 14, 17);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ec6253;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Multiplication Table Generator</h2>
+
+        <input type="number" id="number" placeholder="Enter a number">
+
+        <br>
+
+        <button onclick="generateTable()">Generate Table</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function generateTable() {
+            let num = document.getElementById("number").value;
+            let result = document.getElementById("result");
+
+            if (num === "") {
+                result.innerHTML = "<span style='color:red;'>Please enter a number.</span>";
+                return;
+            }
+
+            let table = "<h3>Table of " + num + "</h3>";
+
+            for (let i = 1; i <= 10; i++) {
+                table += `${num} × ${i} = ${num * i}<br>`;
+            }
+
+            result.innerHTML = table;
+        }
+    </script>
+
+</body>
+
+</html>

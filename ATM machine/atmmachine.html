@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATM Machine</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#4CAF50,#81C784);
+}
+
+.container{
+    width:350px;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:2px solid #4CAF50;
+    border-radius:6px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#388E3C;
+}
+
+#result{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+    color:#333;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>ATM Machine</h2>
+
+<input type="number" id="amount" placeholder="Enter Amount">
+
+<button onclick="checkBalance()">Check Balance</button>
+
+<button onclick="deposit()">Deposit</button>
+
+<button onclick="withdraw()">Withdraw</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+let balance = 5000;
+
+function checkBalance(){
+    document.getElementById("result").innerHTML =
+    "Current Balance: ₹" + balance;
+}
+
+function deposit(){
+
+    let amount = Number(document.getElementById("amount").value);
+
+    if(amount<=0){
+        alert("Enter a valid amount");
+        return;
+    }
+
+    balance += amount;
+
+    document.getElementById("result").innerHTML =
+    "₹" + amount + " Deposited.<br>Balance: ₹" + balance;
+
+    document.getElementById("amount").value="";
+}
+
+function withdraw(){
+
+    let amount = Number(document.getElementById("amount").value);
+
+    if(amount<=0){
+        alert("Enter a valid amount");
+        return;
+    }
+
+    if(amount>balance){
+        alert("Insufficient Balance");
+        return;
+    }
+
+    balance -= amount;
+
+    document.getElementById("result").innerHTML =
+    "₹" + amount + " Withdrawn.<br>Balance: ₹" + balance;
+
+    document.getElementById("amount").value="";
+}
+
+</script>
+
+</body>
+</html>

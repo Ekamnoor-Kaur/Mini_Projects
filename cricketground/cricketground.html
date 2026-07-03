@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Ground</title>
+</head>
+
+<body>
+
+    <script>
+
+        let canvas = document.createElement("canvas");
+        canvas.width = 500;
+        canvas.height = 500;
+        canvas.style.border = "2px solid black";
+        document.body.appendChild(canvas);
+
+        let ctx = canvas.getContext("2d");
+
+        // Ground
+        ctx.beginPath();
+        ctx.arc(250, 250, 180, 0, 2 * Math.PI);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = "darkgreen";
+        ctx.stroke();
+
+        // Pitch
+        ctx.beginPath();
+        ctx.rect(235, 170, 30, 160);
+        ctx.fillStyle = "tan";
+        ctx.fill();
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+
+        // Top wickets
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 2;
+
+        ctx.beginPath();
+        ctx.moveTo(240, 170);
+        ctx.lineTo(240, 185);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(245, 170);
+        ctx.lineTo(245, 185);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 170);
+        ctx.lineTo(250, 185);
+        ctx.stroke();
+
+        // Bottom wickets
+        ctx.beginPath();
+        ctx.moveTo(240, 315);
+        ctx.lineTo(240, 330);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(245, 315);
+        ctx.lineTo(245, 330);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 315);
+        ctx.lineTo(250, 330);
+        ctx.stroke();
+
+
+        // Bowler
+        ctx.beginPath();
+        ctx.arc(245, 120, 8, 0, 2 * Math.PI);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+
+        // Batsman
+        ctx.beginPath();
+        ctx.arc(265, 295, 8, 0, 2 * Math.PI);
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+        // Bat
+        ctx.beginPath();
+        ctx.moveTo(270, 295);
+        ctx.lineTo(282, 315);
+        ctx.strokeStyle = "brown";
+        ctx.lineWidth = 4;
+        ctx.stroke();
+
+        // Wicket Keeper
+        ctx.beginPath();
+        ctx.arc(245, 340, 8, 0, 2 * Math.PI);
+        ctx.fillStyle = "purple";
+        ctx.fill();
+
+        // Ball
+        ctx.beginPath();
+        ctx.arc(245, 155, 4, 0, 2 * Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        // Fielders
+
+        ctx.beginPath();
+        ctx.arc(120, 120, 7, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(380, 120, 7, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(100, 250, 7, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(400, 250, 7, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(150, 380, 7, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(350, 380, 7, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(250, 70, 7, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(250, 430, 7, 0, 2 * Math.PI);
+        ctx.fill();
+
+    </script>
+
+</body>
+
+</html>

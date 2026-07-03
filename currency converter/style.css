@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+label {
+    width: 320px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    width: 320px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+button {
+    width: 320px;
+    padding: 13px;
+    margin-top: 10px;
+    background: white;
+    color: #4f46e5;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #f3f4f6;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#result {
+    margin-top: 15px;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    input,
+    select,
+    button,
+    label {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    input,
+    select,
+    button,
+    label {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    #result {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 14px;
+    }
+}

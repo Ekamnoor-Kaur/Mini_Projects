@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light</title>
+</head>
+
+<body>
+
+    <script>
+
+        let canvas = document.createElement("canvas");
+        canvas.width = 250;
+        canvas.height = 450;
+        canvas.style.border = "2px solid black";
+        document.body.appendChild(canvas);
+
+        let ctx = canvas.getContext("2d");
+
+        // Traffic light box
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.fillRect(75, 30, 100, 250);
+
+        // Red light
+        ctx.beginPath();
+        ctx.arc(125, 80, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.stroke();
+
+        // Yellow light
+        ctx.beginPath();
+        ctx.arc(125, 155, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+        ctx.stroke();
+
+        // Green light
+        ctx.beginPath();
+        ctx.arc(125, 230, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.stroke();
+
+        // Pole
+        ctx.beginPath();
+        ctx.fillStyle = "gray";
+        ctx.fillRect(115, 280, 20, 130);
+
+        // Base
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.fillRect(85, 410, 80, 15);
+
+    </script>
+
+</body>
+
+</html>

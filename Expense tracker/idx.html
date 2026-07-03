@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+
+        input {
+            width: 280px;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4f46e5;
+        }
+
+        button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        h3 {
+            margin-top: 25px;
+            color: #333;
+        }
+
+        #expenseList {
+            width: 320px;
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        #expenseList li {
+            background: white;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        #total {
+            margin-top: 20px;
+            color: #16a34a;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Expense Tracker</h2>
+    Expense Name:
+    <input type="text" id="expenseName"><br><br>
+    Amount:
+    <input type="number" id="amount"><br><br>
+    <button onclick="addExpense()">Add expense</button>
+    <h3>Expenses</h3>
+    <ul id="expenseList"></ul>
+    <h3 id="total">Total Expense: ₹0</h3>
+
+    <script>
+        let totalExpense = 0;
+        function addExpense() {
+            let name = document.getElementById("expenseName").value;
+            let amount = Number(document.getElementById("amount").value);
+            if (name != "" && amount > 0) {
+                let li = document.createElement("li");
+                li.innerHTML = name + "- ₹" + amount;
+                document.getElementById("expenseList").appendChild(li)
+                totalExpense += amount;
+                document.getElementById("total").innerHTML = "Total Expense:₹" + totalExpense;
+                document.getElementById("expenseName").value = "";
+                document.getElementById("amount").value = ""
+            }
+        }
+    </script>
+</body>
+
+</html>
